@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        HelloUser();
+        ATV1();
     }
 
-    private  static void HelloUser() {
+    private  static void ATV1() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Hey, what's ur name?");
         while(scan.hasNextLine()){
