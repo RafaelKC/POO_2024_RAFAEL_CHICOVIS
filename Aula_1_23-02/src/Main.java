@@ -97,7 +97,7 @@ public class Main {
         int resposta = scan.nextInt();
 
         String[] opcoes = {"hahahahahahaha", "Pedra", "Papel", "Tesoura"};
-        int int_random = (int)Math.floor(Math.random() * (2 - 0 + 0) + 0);
+        int int_random = (int)Math.floor(Math.random() * (3 - 1 + 1) + 1);
         System.out.println("Você: " + opcoes[resposta]);
         System.out.println("Maquina: " + opcoes[int_random]);
         System.out.println(" ");
