@@ -53,17 +53,29 @@ public class Main {
         System.out.println("1. Pedra ");
         System.out.println("2. Papel");
         System.out.println("3. Tesoura");
+        System.out.print("Esolha uma opção pelo indice: ");
         int resposta = scan.nextInt();
 
         String[] opcoes = {"hahahahahahaha", "Pedra", "Papel", "Tesoura"};
         int int_random = (int)Math.floor(Math.random() * (2 - 0 + 0) + 0);
         System.out.println("Você: " + opcoes[resposta]);
         System.out.println("Maquina: " + opcoes[int_random]);
+        System.out.println(" ");
 
         if(opcoes[resposta].equals(opcoes[int_random])){
             System.out.println("Empate!!");
-        } else if (resposta==1) {
-            
+        } else if (resposta==1 &&int_random==2) {
+            System.out.println("Você perdeu!!");
+        }else if (resposta==1 &&int_random==3) {
+            System.out.println("Você Ganhou!!");
+        }else if (resposta==2 &&int_random==1) {
+            System.out.println("Você Ganhou!!");
+        }else if (resposta==2 &&int_random==3) {
+            System.out.println("Você Perdeu!!");
+        }else if (resposta==3 && int_random==1) {
+            System.out.println("Você Perdeu!!");
+        }else if (resposta==3 &&int_random==2) {
+            System.out.println("Você Ganhou!!");
         }
 
 
