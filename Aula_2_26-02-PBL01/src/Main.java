@@ -1,3 +1,7 @@
+//***************************************
+// Link to GitHub: https://github.com/RafaelKC/POO_2024_RAFAEL_CHICOVIS/blob/main/Aula_2_26-02-PBL01/src/Main.java
+
+//***************************************
 import java.util.Scanner;
 
 public class Main {
