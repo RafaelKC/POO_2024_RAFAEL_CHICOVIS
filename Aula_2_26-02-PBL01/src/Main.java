@@ -30,20 +30,20 @@ public class Main {
     }
 
     private static void doCalcAndPrint(int firstNumber, int secondNumber, OperationOption selectedOption) {
-        int result = 0;
+        float result = 0;
 
         switch (selectedOption) {
             case Sum -> {
-                result = firstNumber + secondNumber;
+                result = (float)firstNumber + (float)secondNumber;
             }
             case Multiply -> {
-                result = firstNumber * secondNumber;
+                result = (float)firstNumber * (float)secondNumber;
             }
             case Divide -> {
-                result = firstNumber / secondNumber;
+                result = (float)firstNumber / (float)secondNumber;
             }
             case Minus -> {
-                result = firstNumber - secondNumber;
+                result = (float)firstNumber - (float)secondNumber;
             }
         }
         String resultMsg = getResultMessage(selectedOption);
