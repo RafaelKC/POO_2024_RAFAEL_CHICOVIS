@@ -147,9 +147,10 @@ public class Main {
             System.out.println("=== Total de moedas de cada jogador nesse nivel ===");
             System.out.println();
             for (int jogador = 0; jogador < MaxJogadores; jogador++) {
-                System.out.printf(" O jogador %s no nivel atual tem %s moedas", Jogadores.get(jogador), nivel, Moedas[jogador][nivel]);
+                System.out.printf(" O jogador %s no nivel %s tem %s moedas", Jogadores.get(jogador), nivel, Moedas[jogador][nivel]);
+                System.out.println();
             }
-            System.out.println();
+
         }
         static void op6(ArrayList<String> Jogadores, int[][] Pontuacao, int MaxJogadores,
         int MaxNiveis) {
@@ -168,7 +169,7 @@ public class Main {
                     jogadorMaiorPont = jogador;
                 }
             }
-            System.out.printf("A maior pontuação somando todos os nivel é do jogador %s com%s pontos!", Jogadores.get(jogadorMaiorPont), maiorPontuacao);
+            System.out.printf("A maior pontuação somando todos os nivel é do jogador %s com %s pontos!", Jogadores.get(jogadorMaiorPont), maiorPontuacao);
             System.out.println();
         }
     }
