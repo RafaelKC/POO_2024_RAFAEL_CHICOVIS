@@ -1,0 +1,123 @@
+# Simulado
+
+# 1:
+    - b;
+# 2:
+    - (1): 24;
+    - (2): 6;
+# 3:
+    - b;
+# 4:
+    - a;
+# 5:
+    - (1): 120;
+    - (2): 4.0;
+# 6:
+    - c, I e II;
+# 7:
+    - (1): 76,8;
+    - (2): 46,4;
+# 8:
+    - b, apesar de usar public, ela não realmente implementa o encapsulamento;
+# 9:
+    - a;
+10#:
+    public class Main {
+        public static void main(String[] args) {
+             Turma turmaA = new Turma("A");
+            turmaA.InserirEstudante(new Estudante("Gabriel"));
+            turmaA.InserirEstudante(new Estudante("Aline"));
+            turmaA.InserirEstudante(new Estudante("Ricardo"));
+            turmaA.InserirEstudante(new Estudante("Rafaela"));
+
+            Turma turmaB = new Turma("B");
+            turmaB.InserirEstudante(new Estudante("Lucas"));
+            turmaB.InserirEstudante(new Estudante("Alexandre"));
+            turmaB.InserirEstudante(new Estudante("Giovana"));
+            turmaB.InserirEstudante(new Estudante("Giulia"));
+
+            turmaA.AtribuitNota("Ricardo", 8.0f);
+            turmaA.AtribuitNota("Aline", 9.0f);
+            turmaA.AtribuitNota("Rafaela", 5.5f);
+            turmaA.AtribuitNota("Gabriel", 6.0f);
+
+            turmaB.AtribuitNota("Lucas", 10.0f);
+            turmaB.AtribuitNota("Alexandre", 3.0f);
+            turmaB.AtribuitNota("Giovana", 7.0f);
+            turmaB.AtribuitNota("Giulia", 8.5f);
+
+            turmaA.Resultado();
+            turmaB.Resultado();
+        }
+    }
+
+    public class Turma {
+        private String Nome;
+        private ArrayList<Estudante> Estudantes;
+
+        public Turma(String nome) {
+            this.Nome = nome;
+            this.Estudantes = new ArrayList<Estudante>();
+        }
+
+        public void InserirEstudante(Estudante estudante) {
+            this.Estudantes.add(estudante);
+        }
+
+        public void AtribuitNota(String alunoNome, float nota) {
+            boolean encontrado = false;
+            int i = 0;
+            while (!encontrado && i < this.Estudantes.size()) {
+                Estudante estudanteAtual = this.Estudantes.get(i);
+                if (estudanteAtual.Is(alunoNome)) {
+                    estudanteAtual.AtribuirNota(nota);
+                    encontrado = true;
+                } else {
+                    i++;
+                }
+            }
+        }
+        public void Resultado() {
+            System.out.println("Resultado da Turma" + this.Nome + ":");
+            for (Estudante estudante: this.Estudantes) {
+                System.out.println(estudante.Resultado());
+            }
+            System.out.println();
+        }
+    }
+
+    public class Estudante {
+        private String Nome;
+        private float Nota;
+
+        public Estudante(String nome) {
+            this.Nome = nome;
+            this.Nota = 0;
+        }
+
+        public boolean Is(String nome) {
+            return Objects.equals(this.Nome, nome);
+        }
+
+        public void AtribuirNota(float nota) {
+            this.Nota = nota;
+        }
+
+        public String Resultado() {
+            String resultadoMgs = "%s (%s): %s";
+
+            String resultado = "APROVADO";
+
+            if (this.Nota < 7 && this.Nota >= 4) {
+                resultado = "RECUPERAÇÃO";
+            } else if (this.Nota < 4) {
+                resultado = "REPROVADO";
+            }
+
+            return String.format(resultadoMgs, this.Nome, this.Nota, resultado);
+        }
+    }
+
+
+
+
